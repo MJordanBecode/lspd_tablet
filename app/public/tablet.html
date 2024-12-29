@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablette</title>
+    <style>
+        body {
+            display: none;
+        }
+        .tablet {
+            position: fixed;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 9999;
+        }
+        .tablet-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tablet" id="tablet">
+        <div class="tablet-content">
+            <h1>Bienvenue sur la tablette</h1>
+            <p>Voici votre interface utilisateur.</p>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'showTablet') {
+                document.getElementById('tablet').style.display = event.data.visible ? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>
