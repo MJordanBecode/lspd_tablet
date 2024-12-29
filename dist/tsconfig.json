@@ -5,6 +5,8 @@
       "dom",
       "es6"
     ],
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
     "allowJs": true,
     "jsx": "preserve",
     "moduleResolution": "node",
@@ -31,4 +33,5 @@
   "exclude": [
     "node_modules"
   ]
+  
 }
